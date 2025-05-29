@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerre des Clans</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/images/" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Écran de démarrage -->
+    <div id="start-screen">
+        <h1>Guerre des Clans</h1>
+        <button id="start-button">Commencer la bataille</button>
+    </div>
+
+    <!-- Conteneur principal du jeu -->
+    <div id="game-container" class="hidden">
+      
+        <!-- Indicateur de tour -->
+        <div id="turn-indicator">TOUR DU JOUEUR 1</div>
+
+        <!-- Barres de santé globales -->
+        <div class="global-health-bars">
+            <div class="health-bar">
+                <div class="health-fill" id="player1-health-fill"></div>
+                <span>Joueur 1</span>
+            </div>
+            <div class="health-bar">
+                <div class="health-fill" id="player2-health-fill"></div>
+                <span>Joueur 2</span>
+            </div>
+        </div>
+
+        <!-- Sélection de clan -->
+        <div id="clan-selection" class="hidden">
+            <h2>Choisissez votre clan</h2>
+            <div class="clans-container">
+                <div class="clan" data-clan="Montagnes">
+                    <img src="assets/clan-icons/montagnes.png" alt="Montagnes">
+                    <h3>Montagnes</h3>
+                    <p>Bonus: Défense +1</p>
+                </div>
+                <div class="clan" data-clan="Plaines">
+                    <img src="assets/clan-icons/plaines.png" alt="Plaines">
+                    <h3>Plaines</h3>
+                    <p>Bonus: Précision +1</p>
+                </div>
+                <div class="clan" data-clan="Sages">
+                    <img src="assets/clan-icons/sage.png" alt="Sages">
+                    <h3>Sages</h3>
+                    <p>Bonus: Magie +1</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Champ de bataille -->
+        <div id="battlefield" class="hidden">
+            <!-- Conteneur pour la grille et les entrepôts -->
+            <div class="battle-container">
+                <!-- Grille de jeu -->
+                <div id="grid"></div>
+        
+                <!-- Entrepôts des joueurs -->
+                <div class="warehouses">
+                    <div id="player1-warehouse" class="warehouse">
+                        <h3>Armurerie Joueur 1</h3>
+                        <div class="units"></div>
+                    </div>
+                    <div id="player2-warehouse" class="warehouse">
+                        <h3>Armurerie Joueur 2</h3>
+                        <div class="units"></div>
+                    </div>
+                </div>
+            </div>
+        
+          
+        
+            <!-- Actions -->
+            <div id="actions"></div>
+        </div>
+    </div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
